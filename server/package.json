@@ -2,13 +2,15 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "server.ts",
   "type": "module",
   "scripts": {
-    "start": "nodemon server.js --exec 'node --watch'"
+  "start": "node dist/server.js",
+  "build": "tsc",
+  "dev": "nodemon  dist/server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "MN Raza",
   "license": "ISC",
   "dependencies": {
     "@types/express": "^5.0.0",
@@ -17,6 +19,8 @@
     "mongoose": "^8.9.5"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
   }
 }
