@@ -16,13 +16,14 @@ interface User {
     email: string
     password: string
 }
+
 const Login: React.FC = () => {
 
     const [user, setUser] = useState<User>({
         email: "",
         password: ""
     })
-    const changeHandle = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target
         setUser({ ...user, [name]: value })
     }
@@ -46,11 +47,11 @@ const Login: React.FC = () => {
                     <div className="grid w-full items-center gap-4">
                         <div className="flex flex-col space-y-1.5">
                             <Label htmlFor="email">Email</Label>
-                            <Input type="email" className="rounded-lg " id="email" name="email" placeholder="abc@example.com" value={user.email} onChange={changeHandle} />
+                            <Input type="email" className="rounded-lg " id="email" name="email" placeholder="abc@example.com" value={user.email} onChange={handleChange} />
                         </div>
                         <div className="flex flex-col space-y-1.5">
                             <Label htmlFor="password">Password</Label>
-                            <Input name="password" type="password" id="password" placeholder="Enter Password" value={user.password} onChange={changeHandle} />
+                            <Input name="password" type="password" id="password" placeholder="Enter Password" value={user.password} onChange={handleChange} />
                         </div>
 
 

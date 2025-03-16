@@ -11,28 +11,29 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Link, useNavigate } from "react-router-dom"
 
-
 interface User {
     name: string,
     email: string
     password: string
 }
+
 const Signup: React.FC = () => {
     const navigate = useNavigate()
 
     const [user, setUser] = useState<User>({
         name: "",
         email: "",
-        password: ""
+        password: "",
+
     })
-    const changeHandle = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target
         setUser({ ...user, [name]: value })
     }
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log("user", user)
+        console.log("user 👤 details : ", user)
         setUser({
             name: "",
             email: "",
@@ -51,15 +52,15 @@ const Signup: React.FC = () => {
                     <div className="grid w-full items-center gap-4">
                         <div className="flex flex-col space-y-1.5">
                             <Label htmlFor="name">Name</Label>
-                            <Input type="text" className="rounded-lg " id="name" name="name" placeholder="Enter Name" value={user.name} onChange={changeHandle} />
+                            <Input type="text" className="rounded-lg " id="name" name="name" placeholder="Enter Name" value={user.name} onChange={handleChange} />
                         </div>
                         <div className="flex flex-col space-y-1.5">
                             <Label htmlFor="email">Email</Label>
-                            <Input type="email" className="rounded-lg " id="email" name="email" placeholder="abc@example.com" value={user.email} onChange={changeHandle} />
+                            <Input type="email" className="rounded-lg " id="email" name="email" placeholder="abc@example.com" value={user.email} onChange={handleChange} />
                         </div>
                         <div className="flex flex-col space-y-1.5">
                             <Label htmlFor="password">Password</Label>
-                            <Input name="password" type="password" id="password" placeholder="Enter Password" value={user.password} onChange={changeHandle} />
+                            <Input name="password" type="password" id="password" placeholder="Enter Password" value={user.password} onChange={handleChange} />
                         </div>
 
 
