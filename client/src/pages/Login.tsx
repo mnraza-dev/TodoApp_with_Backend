@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Link } from "react-router-dom"
 
 
 interface User {
@@ -59,6 +60,8 @@ const Login: React.FC = () => {
                 <CardFooter className="flex justify-between">
                     <Button type="submit" variant="default" className="w-full border-none rounded-xl">Login</Button>
                 </CardFooter>
+                <p className="text-center text-sm -mt-4 mb-4">Don't have an account ? <Link to="/signup" className="text-blue-600">Sign Up</Link></p>
+
             </form>
         </Card>
     )
